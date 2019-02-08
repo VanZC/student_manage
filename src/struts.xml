@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.action.excludePattern" value="/static/.*?" />
+    <constant name="struts.devMode" value="true" />
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="login" class="action.LoginActionForm">
+            <result name="adminLoginSuccess">/web-content/admin_welcome.jsp</result>
+            <result name="studentLoginSuccess">/web-content/student_welcome.jsp</result>
+            <result name="error">/web-content/error.jsp</result>
+        </action>
+        <action name="register" class="action.RegisterActionForm">
+            <result name="registerSuccess">/web-content/register.jsp</result>
+            <result name="error">/web-content/error.jsp</result>
+        </action>
+        <action name="studentSelectScore" class="action.SelectScoreActionForm">
+            <result name="success">/web-content/student_score.jsp</result>
+            <result name="error">/web-content/error.jsp</result>
+        </action>
+        <action name="insertScore" class="action.InsertScoreActionForm">
+            <result name="success">/web-content/insert_score.jsp</result>
+            <result name="error">/web-content/error.jsp</result>
+        </action>
+        <action name="selectAll" class="action.SelectAllActionForm">
+            <result name="success">/web-content/select_score.jsp</result>
+        </action>
+    </package>
+</struts>
